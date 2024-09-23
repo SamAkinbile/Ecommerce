@@ -3,6 +3,8 @@ from django.db import models
 
 from django.urls import reverse
 
+# Category (1)
+#Product (1)
 
 class Category(models.Model):
 
