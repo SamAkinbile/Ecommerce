@@ -22,6 +22,7 @@ class Cart():
 
 
         self.cart = cart
+
 def add(self, product, product_qty):
 
         product_id = str(product.id)
@@ -38,3 +39,6 @@ def add(self, product, product_qty):
 
         self.session.modified = True
 
+def __len__(self):
+
+        return sum(item['qty'] for item in self.cart.values())
