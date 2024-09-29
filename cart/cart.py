@@ -23,7 +23,8 @@ class Cart():
 
         self.cart = cart
 
-def add(self, product, product_qty):
+
+    def add(self, product, product_qty):
 
         product_id = str(product.id)
 
@@ -39,11 +40,39 @@ def add(self, product, product_qty):
 
         self.session.modified = True
 
-def __len__(self):
+
+
+    def delete(self, product):
+
+        product_id = str(product)
+
+        if product_id in self.cart:
+
+            del self.cart[product_id]
+
+        self.session.modified = True
+
+
+
+    def update(self, product, qty):
+
+        product_id = str(product)
+        product_quantity = qty
+
+        if product_id in self.cart:
+
+            self.cart[product_id]['qty'] = product_quantity
+
+        self.session.modified = True
+
+
+    def __len__(self):
 
         return sum(item['qty'] for item in self.cart.values())
 
-def __iter__(self):
+
+
+    def __iter__(self):
 
         all_product_ids = self.cart.keys()
 
@@ -63,6 +92,15 @@ def __iter__(self):
 
             yield item    
 
-def get_total(self):
+
+    
+    def get_total(self):
 
         return sum(Decimal(item['price']) * item['qty'] for item in self.cart.values())
+
+
+
+
+  
+
+
