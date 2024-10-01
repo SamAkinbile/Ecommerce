@@ -17,7 +17,6 @@ urlpatterns = [
     
     path('update/', views.cart_update, name='cart-update'),
 
-
 ]
 
 
