@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 
 from .forms import CreateUserForm, LoginForm, UpdateUserForm
 
-from django.http import HttpResponse
+
 
 
 
