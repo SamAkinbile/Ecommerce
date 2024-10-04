@@ -1,6 +1,9 @@
 from django.shortcuts import redirect, render
 
 from .forms import CreateUserForm, LoginForm, UpdateUserForm
+
+from django.contrib.auth.models import User
+
 from django.contrib.sites.shortcuts import get_current_site
 from . token import user_tokenizer_generate
 
