@@ -162,8 +162,56 @@ def user_logout(request):
 
     return redirect("store")
 
+
+
 @login_required(login_url='my-login')
 def dashboard(request):
 
 
     return render(request, 'account/dashboard.html')
+
+
+
+@login_required(login_url='my-login')
+def profile_management(request):    
+
+    # Updating our user's username and email
+
+    user_form = UpdateUserForm(instance=request.user)
+
+    if request.method == 'POST':
+
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+
+        if user_form.is_valid():
+
+            user_form.save()
+
+            messages.info(request, "Update success!")
+
+            return redirect('dashboard')
+
+   
+
+    context = {'user_form':user_form}
+
+    return render(request, 'account/profile-management.html', context=context)
+
+
+@login_required(login_url='my-login')
+def delete_account(request):
+
+    user = User.objects.get(id=request.user.id)
+
+    if request.method == 'POST':
+
+        user.delete()
+
+
+        messages.error(request, "Account deleted")
+
+
+        return redirect('store')
+
+
+    return render(request, 'account/delete-account.html')
