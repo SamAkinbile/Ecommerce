@@ -19,7 +19,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.decorators import login_required
 
-
+from django.contrib import messages
 
 def register(request):
 
@@ -157,9 +157,11 @@ def user_logout(request):
 
         pass
 
-    auth.logout(request)
+
+    messages.success(request, "Logout success")
 
     return redirect("store")
+
 
 
 @login_required(login_url='my-login')
