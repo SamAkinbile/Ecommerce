@@ -157,11 +157,9 @@ def user_logout(request):
 
         pass
 
-
-    messages.success(request, "Logout success")
+    auth.logout(request)
 
     return redirect("store")
-
 
 
 @login_required(login_url='my-login')
