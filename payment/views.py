@@ -56,10 +56,10 @@ def complete_order(request):
 
         address1 = request.POST.get('address1')
         address2 = request.POST.get('address2')
-        city = request.POST.get('city')
+        county = request.POST.get('city')
 
-        state = request.POST.get('state')
-        zipcode = request.POST.get('zipcode')
+      
+        eircode = request.POST.get('zipcode')
 
 
         # All-in-one shipping address
@@ -137,15 +137,6 @@ def complete_order(request):
         return response
 
 
-
-
-
-
-    
-
-
-
-
 def payment_success(request):
 
 
@@ -161,11 +152,6 @@ def payment_success(request):
 
 
     return render(request, 'payment/payment-success.html')
-
-
-
-
-
 
 
 def payment_failed(request):

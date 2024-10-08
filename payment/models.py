@@ -17,7 +17,7 @@ class ShippingAddress(models.Model):
 
     address2 = models.CharField(max_length=300)
 
-    city = models.CharField(max_length=255)
+ 
 
 
     # Optional
@@ -27,7 +27,7 @@ class ShippingAddress(models.Model):
     eircode = models.CharField(max_length=255, null=True, blank=True)
 
 
-    # FK
+    # Foreign Key FK
 
     # Authenticated / not authenticated users (bear in mind)
 

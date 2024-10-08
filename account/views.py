@@ -1,25 +1,31 @@
 from django.shortcuts import redirect, render
 
-from .forms import CreateUserForm,LoginForm, UpdateUserForm
+from .forms import CreateUserForm, LoginForm, UpdateUserForm
+
+from payment.forms import ShippingForm
+from payment.models import ShippingAddress
+
+from payment.models import Order, OrderItem
+
 
 from django.contrib.auth.models import User
 
 from django.contrib.sites.shortcuts import get_current_site
-from .token import user_tokenizer_generate
+from . token import user_tokenizer_generate
 
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from django.contrib.auth.models import auth
-from django.contrib.auth import authenticate, login, logout
-
-
+from django.contrib.auth import authenticate
 
 
 from django.contrib.auth.decorators import login_required
 
+
 from django.contrib import messages
+
 
 def register(request):
 
