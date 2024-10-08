@@ -22,9 +22,9 @@ class ShippingAddress(models.Model):
 
     # Optional
 
-    state = models.CharField(max_length=255, null=True, blank=True)
+    county = models.CharField(max_length=255, null=True, blank=True)
 
-    zipcode = models.CharField(max_length=255, null=True, blank=True)
+    eircode = models.CharField(max_length=255, null=True, blank=True)
 
 
     # FK

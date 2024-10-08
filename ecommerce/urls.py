@@ -44,6 +44,9 @@ urlpatterns = [
     path('account/', include('account.urls')),
 
 
+    # Payment app
+
+    path('payment/', include('payment.urls')),
 
 
 ]
