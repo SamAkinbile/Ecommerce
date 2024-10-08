@@ -51,6 +51,8 @@ INSTALLED_APPS = [
 
     'mathfilters',
 
+     'payment', # Django app
+
 ]
 
 
@@ -103,9 +105,6 @@ DATABASES = {
 
 
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-]
 
 
 # Password validation
