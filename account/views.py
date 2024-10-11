@@ -27,6 +27,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 
+
+
 def register(request):
 
     form = CreateUserForm()
@@ -116,6 +118,7 @@ def email_verification_failed(request):
     return render(request, 'account/registration/email-verification-failed.html')
 
 
+
 def my_login(request):
 
     form = LoginForm()
@@ -143,6 +146,7 @@ def my_login(request):
     return render(request, 'account/my-login.html', context=context)
 
 
+# logout
 
 def user_logout(request):
 
@@ -170,11 +174,13 @@ def user_logout(request):
 
 
 
+
 @login_required(login_url='my-login')
 def dashboard(request):
 
 
     return render(request, 'account/dashboard.html')
+
 
 
 
@@ -202,6 +208,8 @@ def profile_management(request):
     context = {'user_form':user_form}
 
     return render(request, 'account/profile-management.html', context=context)
+
+
 
 
 @login_required(login_url='my-login')
