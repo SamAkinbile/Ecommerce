@@ -64,7 +64,7 @@ class Order(models.Model):
     date_ordered = models.DateTimeField(auto_now_add=True)
 
 
-    # FK
+    # Foreign Key
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 

@@ -56,17 +56,17 @@ def complete_order(request):
 
         address1 = request.POST.get('address1')
         address2 = request.POST.get('address2')
-        county = request.POST.get('city')
+        county = request.POST.get('county')
 
       
-        eircode = request.POST.get('zipcode')
+        eircode = request.POST.get('eircode')
 
 
         # All-in-one shipping address
 
         shipping_address = (address1 + "\n" + address2 + "\n" +
         
-        city + "\n" + state + "\n" + zipcode
+        county +  "\n" + eircode
         
         )
 
