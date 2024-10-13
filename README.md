@@ -4,7 +4,7 @@
 
 **Ecommerce Toy Store** is a user-friendly online platform where customers can explore and purchase a wide variety of toys for children of all ages. It features an easy-to-navigate interface with categories, product details, a shopping cart, and a checkout process. This store was built using Django and provides a seamless shopping experience.
 
-You can view the live site [here](https://yourdeployedlink.com/).
+You can view the live site [here](https://samakinbile.github.io/Ecommerce/).
 
 ## Table of Contents
   * [User Experience (UX)](#user-experience-ux)
