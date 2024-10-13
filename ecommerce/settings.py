@@ -28,7 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS =['https://easyshopping-31819966405a.herokuapp.com/', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net', 'https://easyshopping-31819966405a.herokuapp.com/']
 
 
 # Application definition
