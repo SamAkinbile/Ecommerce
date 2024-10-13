@@ -10,13 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
-
+import dj_database_url
 from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -25,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u(s2$m96+!h!@1(7b-9k4=#h(6bxh=3v^4#jk8ucpg%c=r3)l-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS =['https://easyshopping-31819966405a.herokuapp.com/', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
 
@@ -155,7 +154,16 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 if 'DATABASE_URL' in os.environ:
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get(' postgres://u79bmmkmtel:bqFImE5jFFUK@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/wad_army_salt_782609'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 MEDIA_URL = '/media/'
 
