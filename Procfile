@@ -1,1 +1,2 @@
-web: gunicorn Ecommerce.wsgi
+web: gunicorn ecommerce.wsgi
+web: python manage.py runserver
