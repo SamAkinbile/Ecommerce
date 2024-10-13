@@ -153,17 +153,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get(' postgres://u79bmmkmtel:bqFImE5jFFUK@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/wad_army_salt_782609'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+
 
 MEDIA_URL = '/media/'
 
