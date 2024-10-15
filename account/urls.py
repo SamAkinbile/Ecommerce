@@ -1,16 +1,17 @@
-
 from django.urls import path
 
 from . import views
 
+
 from django.contrib.auth import views as auth_views
+
+
+
 
 urlpatterns = [
 
 
- 
     path('register', views.register, name='register'),
-
 
 
     # Email verification URL's
@@ -27,14 +28,17 @@ urlpatterns = [
     path('email-verification-failed', views.email_verification_failed, name='email-verification-failed'),
 
 
-# Login / logout urls
+
+    # Login / logout urls
 
     path('my-login', views.my_login, name='my-login'),
 
 
     path('user-logout', views.user_logout, name='user-logout'),
 
-    
+
+
+
     # Dashboard / profile urls
 
     path('dashboard', views.dashboard, name='dashboard'),
@@ -44,7 +48,8 @@ urlpatterns = [
     path('delete-account', views.delete_account, name='delete-account'),
 
 
-  # Password management urls/views
+
+    # Password management urls/views
 
 
 
@@ -67,7 +72,9 @@ urlpatterns = [
 
     path('reset_password_complete', auth_views.PasswordResetCompleteView.as_view(template_name="account/password/password-reset-complete.html"), name='password_reset_complete'),
 
-  # Manage shipping url
+
+
+    # Manage shipping url
 
     path('manage-shipping', views.manage_shipping, name='manage-shipping'),
 
@@ -76,17 +83,7 @@ urlpatterns = [
 
     path('track-orders', views.track_orders, name='track-orders'),
 
-
 ]
-
-
-
-
-
-
-
-
-
 
 
 
