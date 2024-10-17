@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS =['https://easyshopping-31819966405a.herokuapp.com/', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
 
@@ -200,15 +200,3 @@ EMAIL_HOST_PASSWORD = 'vmrc iogg wtme pvec' # - Enter your app password
 
 
 
-# DATABASES = {
- #     'default': {
- #         'ENGINE': 'django.db.backends.sqlite3',
- #         'NAME': BASE_DIR / 'db.sqlite3',
- #     }
- # }
-    
-
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://u79bmmkmtel:bqFImE5jFFUK@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/wad_army_salt_782609')
-}
