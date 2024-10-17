@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 
 from django.urls import reverse
 
@@ -45,6 +45,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2)
 
     image = models.ImageField(upload_to='images/')
+    
+    featured_image = CloudinaryField('image', default='placeholder')
 
 
     class Meta:

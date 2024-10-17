@@ -9,10 +9,13 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
 import os
 import dj_database_url
-from pathlib import Path
+if os.path.isfile('env.py'):
+    import env
 
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u(s2$m96+!h!@1(7b-9k4=#h(6bxh=3v^4#jk8ucpg%c=r3)l-'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -49,10 +52,15 @@ INSTALLED_APPS = [
 
     'crispy_forms', #crispy forms
 
+    'ecommerce', #django app
 
     'mathfilters',
 
-     'payment', # Django app
+    'payment', # Django app
+
+    'cloudinary_storage',
+
+    'cloudinary',
 
 ]
 
@@ -155,9 +163,23 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 
-MEDIA_URL = '/media/'
+
 
 MEDIA_ROOT = BASE_DIR / 'static/media'
+
+
+
+# Media files (uploads)
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Static files (CSS, JavaScript, images)
+STATICFILES_STORAGE = (
+    'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -174,3 +196,19 @@ EMAIL_USE_TLS = 'True'
 
 EMAIL_HOST_USER = 'xa7jd7ax@students.codeinstitute.net' # - Enter your GMAIL address # The host email that sends password reset emails
 EMAIL_HOST_PASSWORD = 'vmrc iogg wtme pvec' # - Enter your app password 
+
+
+
+
+# DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': BASE_DIR / 'db.sqlite3',
+ #     }
+ # }
+    
+
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://u79bmmkmtel:bqFImE5jFFUK@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/wad_army_salt_782609')
+}
