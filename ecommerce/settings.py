@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS =['https://easyshopping-31819966405a.herokuapp.com/', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS =['easyshopping-31819966405a.herokuapp.com/', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net', 'https://easyshopping-31819966405a.herokuapp.com/']
 
@@ -196,7 +196,3 @@ EMAIL_USE_TLS = 'True'
 
 EMAIL_HOST_USER = 'xa7jd7ax@students.codeinstitute.net' # - Enter your GMAIL address # The host email that sends password reset emails
 EMAIL_HOST_PASSWORD = 'vmrc iogg wtme pvec' # - Enter your app password 
-
-
-
-
