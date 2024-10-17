@@ -196,3 +196,8 @@ EMAIL_USE_TLS = 'True'
 
 EMAIL_HOST_USER = 'xa7jd7ax@students.codeinstitute.net' # - Enter your GMAIL address # The host email that sends password reset emails
 EMAIL_HOST_PASSWORD = 'vmrc iogg wtme pvec' # - Enter your app password 
+
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("postgres://u79bmmkmtel:bqFImE5jFFUK@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/wad_army_salt_782609"))
+}
