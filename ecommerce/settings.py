@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
 
     'store', 
 
@@ -58,10 +60,9 @@ INSTALLED_APPS = [
 
     'payment', # Django app
 
-    'cloudinary_storage',
+    
 
-    'cloudinary',
-
+    
 ]
 
 
