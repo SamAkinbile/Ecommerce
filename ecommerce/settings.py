@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS =['https://easyhopping-b14b6b96b0f5.herokuapp.com', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS =['easyhopping-b14b6b96b0f5.herokuapp.com', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net', 'https://easyhopping-b14b6b96b0f5.herokuapp.com']
 
