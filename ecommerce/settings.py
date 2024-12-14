@@ -27,11 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS =['easyhopping-b14b6b96b0f5.herokuapp.com', '8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS =['easyhopping-b14b6b96b0f5.herokuapp.com', '8000-samakinbile-ecommerce-u6ure24hj58.ws.codeinstitute-ide.net']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-samakinbile-ecommerce-fxonzcl1uyj.ws.codeinstitute-ide.net', 'https://easyhopping-b14b6b96b0f5.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-samakinbile-ecommerce-u6ure24hj58.ws.codeinstitute-ide.net/', 'https://easyhopping-b14b6b96b0f5.herokuapp.com']
 
 
 # Application definition
